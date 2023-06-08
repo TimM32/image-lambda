@@ -1,19 +1,19 @@
 [
-    
+
 {
-    "name": "numberOne",
+    "name": "attemptOne",
     "size": "1024",
     "type": "jpg"
 },
 
 {
-    "name": "numberTwo",
+    "name": "attemptTwo",
     "size":"1024",
     "type": "jpg"
 },
 
 {
-    "name": "numberThree",
+    "name": "attemptThree",
     "size":"1024",
     "type": "jpg"
 }
