@@ -41,11 +41,10 @@ export const handler = async(event) => {
     // summary = []
   }
     
-  console.log('this is my data', data);
     
   // in demo I do calculations here, in lab, you'll assemble your params object AND use the PutObjectCommand
 
-  // new params for putOBjectCommand
+  const newParams = { Key, }
   // POSSIBLY what you need for lab-17
   // let newParams = {
   //     ...params,
