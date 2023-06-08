@@ -25,17 +25,19 @@ export const handler = async(event) => {
   console.log('Params =>', params);
     
   let data;
-  // lab-17:
-  // let summary 
+ 
   try {
         
     let s3Results = await s3Client.send(new GetObjectCommand(params));
     const response = new Response(s3Results.Body);
     data = await response.json();
 
-        
-  }catch(e){
-    console.log('Handler Event', JSON.stringify(event, undefined, '  '));
+    data.push(newImage);
+    params.Body = JSON.stringify(data);
+    console.log('data post data push request', data);
+      
+  }catch(error){
+    console.warn('Handler Event Error:', error);
     // summary = []
   }
     
