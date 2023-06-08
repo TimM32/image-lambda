@@ -1,6 +1,21 @@
+[
+    
 {
-    "name": "image.jpg",
-    "size": 1024
+    "name": "numberOne",
+    "size": "1024",
+    "type": "jpg"
+},
 
+{
+    "name": "numberTwo",
+    "size":"1024",
+    "type": "jpg"
+},
 
+{
+    "name": "numberThree",
+    "size":"1024",
+    "type": "jpg"
 }
+
+]
