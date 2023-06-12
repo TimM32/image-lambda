@@ -38,28 +38,31 @@ export const handler = async(event) => {
       
   }catch(error){
     console.warn('Handler Event Error:', error);
-    // summary = []
+    
   }
     
     
-  // in demo I do calculations here, in lab, you'll assemble your params object AND use the PutObjectCommand
+  
 
-  const newParams = { Key, }
-  // POSSIBLY what you need for lab-17
-  // let newParams = {
-  //     ...params,
-  //     Key: 'images.json',
-  //     Body: '<updatedSummaryJson>',
-  //     ContentType: "application/json" // For JSON, it's always this
-  // }
-  const { numberOne, numberTwo } = data.numbers;
-  const result = numberOne + numberTwo;
-  console.log('my result', result);
-  // TODO implement
-  const response = {
-    statusCode: 200,
-    // send valid json (a number is valid json)
-    body: result,
+  let newParams = { 
+    Key: 'image.json',
+    ImageType: 'application-json', 
+  
   };
+
+  try {
+    await s3Client.send(new PutObjectCommand(newParams));
+    
+  } catch (error) {
+    console.log('Error encountered: ', error);
+  }
+  
+  const response = {
+    status: 200,
+    body: JSON.stringify(newParams),
+  };
+
   return response;
+
 };
+    
